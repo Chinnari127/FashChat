@@ -14,8 +14,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Use the environment variables
-API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-HUGGING_FACE_TOKEN = "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"
 GENAI_API_KEY = "AIzaSyAWICwCFuZoc7tbxOXO_D4qqgjANVfk820"
 
 # Function to query Stable Diffusion API for fashion-related images
@@ -166,9 +164,8 @@ st.sidebar.markdown(
     
         🌐 Multilingual support
         ✏️ Fashion-based text chat
-        🎙️ Speech-to-text interaction
         🔊 Text-to-speech response
-        🖼️ Fashion image generation
+    
     
     """, unsafe_allow_html=True)
 
@@ -180,12 +177,10 @@ with col1:
 with col2:
     # Welcome message with fashion-specific features
     st.markdown(f"""
-    Welcome to FashionChat💃! Here's how you can interact with our fashion expert: \n
-    1. **Ask fashion questions✏️**: Type your fashion-related queries.
-    2. **Speak fashion queries🎙️**: Click the microphone button to speak and get fashion advice.
-    3. **Listen to advice🔊**: After typing or speaking, click the speaker button to hear the fashion expert's advice.
-    4. **Multilingual support🌐**: Get advice in various languages like English, Hindi, Telugu, and **{len(languages_map)}** more!
-    5. **Get fashion visuals🖼️**: Use the special prompt '!' to get image ideas related to your query.
+    Welcome to **FashionChat💃**! Here's how you can interact with our fashion expert: \n
+    1. **Ask fashion questions✏️**: Type your fashion-related queries and get personalized advice.
+    2. **Listen to advice🔊**: After typing your query, click the speaker button to hear expert advice.
+    3. **Multilingual support🌐**: Get advice in various languages like English, Hindi, Telugu, and **{len(languages_map)}** more!
                """)
 
 st.write("\n")
