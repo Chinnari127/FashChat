@@ -176,7 +176,7 @@ st.title("FashionChat💃")
 st.write("\n")
 col1, col2 = st.columns([2, 4])  # Adjust the column widths as needed
 with col1:
-    st.image("image.png", use_column_width=True)
+    st.image("image.png", use_container_width=True)
 with col2:
     # Welcome message with fashion-specific features
     st.markdown(f"""
@@ -200,7 +200,7 @@ if "response_text" not in st.session_state:
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         if "image" in message:
-            st.image(message["image"], caption=message["content"], use_column_width=True)
+            st.image(message["image"], caption=message["content"], use_container_width=True)
         else:
             st.markdown(message["content"])
 
@@ -229,7 +229,7 @@ if prompt:
         st.session_state.messages.append({"role": "assistant", "content": msg, "image": image})
         st.session_state.is_image_response = True
         st.chat_message("assistant").write(msg)
-        st.chat_message("assistant").image(image, caption=prompt, use_column_width=True)
+        st.chat_message("assistant").image(image, caption=prompt, use_container_width=True)
     else:
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
