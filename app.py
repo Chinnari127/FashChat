@@ -229,7 +229,7 @@ if prompt:
             st.markdown(prompt)
 
         with st.chat_message("assistant"):
-            st.session_state.response_text = generate_gemini_response(prompt)
+            st.session_state.response_text = generate_gemini_response("Give me the respose straight forward in maximum of two or three lines. make sure to sound like a fashion expert and if the query is nit form fashion related domain, give respose that sound like this is not my domain of expertise in a postive way. If required you are allowed to search the web and respond in more than three but less than 5 lines." + prompt)
             # Translate the response
             if dest_language != 'en':
                 translated_response = translate_text(st.session_state.response_text[:400], dest_language)
