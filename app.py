@@ -205,9 +205,7 @@ for message in st.session_state.messages:
             st.markdown(message["content"])
 
 # Handle new user input
-prompt = st.chat_input("What's trending in fashion right now?")
-if st.button("Speak 🎙"):
-    prompt = recognize_speech()  # Change device_index as needed
+prompt = st.chat_input("What's trending in fashion right now?") # Change device_index as needed
 
 if prompt:
     if prompt[0] == '!' or prompt[0:8] == 'generate':
